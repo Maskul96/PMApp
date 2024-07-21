@@ -4,23 +4,19 @@ using PMApp.Entities;
 
 namespace PMApp.Repositories
 {
-    public class EmployeeRepository
-    {
-        //GenericRepository będzie przyjmować tylko klasy, które implementują EntityBase
-        //TKey to drugi parametr generyczny, który też może mieć jakieś swoje ograniczenia
-        public class GenericRepository<TEntity, TKey> where TEntity : class, IEntity, new() //ograniczenie new() mówi o tym, że klasa, która dziedziczy po IEntity  musi mieć bezparametrowy konstruktor
-            where TKey : struct
-        {
-            public TKey? Key { get; set; }
 
+        //GenericRepository będzie przyjmować tylko klasy, które implementują EntityBase
+        //parametrów generycznych może być kilka
+        public class GenericRepository<TEntity> where TEntity : class, IEntity, new() //ograniczenie new() mówi o tym, że klasa, która dziedziczy po IEntity  musi mieć bezparametrowy konstruktor
+        {
             private readonly List<TEntity> _items = new List<TEntity>();
 
             //klasa musi zawierać metody dodawania użytkowników, zapisu, edycji i usuwania
-            //Poniżej stworzenie obiektu bez parametrów
-            public TEntity CeateNewItem()
-            {
-                return new TEntity();
-            }
+            //Poniżej przykładowe stworzenie obiektu bez parametrów
+            //public TEntity CeateNewItem()
+            //{
+            //    return new TEntity();
+            //}
 
             public void Add(TEntity item)
             {
@@ -56,4 +52,4 @@ namespace PMApp.Repositories
             //}
         }
     }
-}
+
