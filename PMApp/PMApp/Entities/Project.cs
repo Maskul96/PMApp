@@ -10,12 +10,20 @@ namespace PMApp.Entities
 
         public float TargetProfitMarginInPLN { get; set; }
 
-        //Do zdefiniowania zespół
+        public Manager? ProjectManager { get; set; }
+
+        public Employee? Programmer { get; set; }
+
+        public Employee? ElectricalDesigner { get; set; }
+
+        public Employee? MechanicalDesigner { get; set; }
+
+        public Employee? SafetyDesigner { get; set; }
 
         public override string ToString()
         {
             return $"Id: {Id}, Name of project: {NameOfProject}, Price of the Project: {PriceOfProject},  " +
-                $"Target Profit Margin in PLN: {TargetProfitMarginInPLN}";
+                $"Target Profit Margin in PLN: {TargetProfitMarginInPLN}, PM: {ProjectManager}";
         }
     }
 }
