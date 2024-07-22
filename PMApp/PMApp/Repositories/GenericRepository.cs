@@ -5,9 +5,10 @@ using PMApp.Entities;
 namespace PMApp.Repositories
 {
 
-        //GenericRepository będzie przyjmować tylko klasy, które implementują EntityBase
-        //parametrów generycznych może być kilka
-        public class GenericRepository<TEntity> where TEntity : class, IEntity, new() //ograniczenie new() mówi o tym, że klasa, która dziedziczy po IEntity  musi mieć bezparametrowy konstruktor
+    //GenericRepository będzie przyjmować tylko klasy, które implementują EntityBase
+    //parametrów generycznych może być kilka
+    //Czyli baza danych umieszczana lokalnie w liście
+    public class GenericRepository<TEntity> where TEntity : class, IEntity, new() //ograniczenie new() mówi o tym, że klasa, która dziedziczy po IEntity  musi mieć bezparametrowy konstruktor
         {
             private readonly List<TEntity> _items = new List<TEntity>();
 

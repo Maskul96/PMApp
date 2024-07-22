@@ -1,6 +1,4 @@
-﻿
-
-namespace PMApp.Repositories
+﻿namespace PMApp.Entities
 {
     public interface IEntity
     {
