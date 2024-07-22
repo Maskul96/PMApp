@@ -1,7 +1,7 @@
 ﻿
 namespace PMApp.Entities
 {
-    //Pracownik posiadac będzie cechy jak Imie i Nazwisko oraz zajmowane stanowisko w pracy
+    //Definicja modelu danych
     public class Employee :EntityBase
     {
         public string? FirstName { get; set; } // Znak zapytania "?" - zgadzamy się na wartość NULL propercji FirstName
@@ -10,10 +10,14 @@ namespace PMApp.Entities
 
         public string? JobTitle { get; set; }
 
+        public int AssignedWorkingTime { get; set; }
+        public int UsedWorkingTime { get; set; }
+
         //przeciążenie metody ToString
         public override string ToString() // lub skrócony zapis zwracania wartości za pomoca operatora "=>" zamiast return
         {
-            return $"Id: {Id}, FirstName: {FirstName}, Name: {Name}, JobTitle: {JobTitle}";
+            return $"Id: {Id}, FirstName: {FirstName}, Name: {Name}, JobTitle: {JobTitle}, Assigned Working Time: {AssignedWorkingTime}" +
+                $"UsedWorkingTime: {UsedWorkingTime}";
         }
 
     }

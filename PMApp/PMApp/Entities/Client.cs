@@ -2,7 +2,7 @@
 
 namespace PMApp.Entities
 {
-    //klasa opisująca klientów biznesowych, którzy zlecają prace
+    //klasa opisująca klientów biznesowych, którzy zlecają prace - definicja modelu danych
     public class Client : EntityBase
     {
         public string? NameOfClient { get; set; }

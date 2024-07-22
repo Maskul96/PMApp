@@ -1,7 +1,7 @@
 ﻿
 namespace PMApp.Entities
 {
-    //klasa opisująca projekt/zlecenie do wykonania od klienta
+    //klasa opisująca projekt/zlecenie do wykonania od klienta - Definicja modelu danych
     public class Project : EntityBase 
     {
         public string? NameOfProject { get; set; }
@@ -23,7 +23,8 @@ namespace PMApp.Entities
         public override string ToString()
         {
             return $"Id: {Id}, Name of project: {NameOfProject}, Price of the Project: {PriceOfProject},  " +
-                $"Target Profit Margin in PLN: {TargetProfitMarginInPLN}, PM: {ProjectManager}";
+                $"Target Profit Margin in PLN: {TargetProfitMarginInPLN}, PM: {ProjectManager}, Programmer: {Programmer}" +
+                $"Electrical Designer: {ElectricalDesigner}, Mechanical Designer: {MechanicalDesigner}, Safety Designer: {SafetyDesigner}";
         }
     }
 }

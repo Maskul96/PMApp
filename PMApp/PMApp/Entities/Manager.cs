@@ -2,6 +2,7 @@
 
 namespace PMApp.Entities
 {
+    //Definicja modelu danych
     public class Manager : Employee
     {
         public string? Name { get; set; }
