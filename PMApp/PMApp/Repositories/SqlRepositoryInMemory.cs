@@ -4,23 +4,28 @@ using PMApp.Entities;
 
 namespace PMApp.Repositories
 {
-    public class SqlRepositoryInMemory
+    public class SqlRepositoryInMemory<T> : IRepository<T> where T : class, IEntity, new()
     {
         private readonly DbContext _dbcontext;
-        private readonly DbSet<Employee> _dbSet;
+        private readonly DbSet<T> _dbSet;
 
         public SqlRepositoryInMemory(DbContext dbContext)
         {
             _dbcontext = dbContext;
-            _dbSet = _dbcontext.Set<Employee>();
+            _dbSet = _dbcontext.Set<T>(); //dane dot. tabeli przechowywanej w pamięci EFC
         }
 
-        public void Add(Employee item)
+        public IEnumerable<T> GetAll()
+        {
+            return _dbSet.OrderBy(x => x.Id).ToList();
+        }
+
+        public void Add(T item)
         {
             _dbSet.Add(item);
         }
 
-        public void Remove(Employee item)
+        public void Remove(T item)
         {
             _dbSet.Remove(item);
         }
@@ -30,7 +35,7 @@ namespace PMApp.Repositories
             _dbcontext.SaveChanges();
         }
 
-        public Employee? GetById(int id)
+        public T? GetById(int id)
         {
             return _dbSet.Find(id);
         }

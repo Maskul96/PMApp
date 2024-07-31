@@ -17,7 +17,7 @@ namespace PMApp.Data
         DbSet<Employee> Employees => Set<Employee>();
         DbSet<Manager> Manager => Set<Manager>();
         DbSet<Project> Projects => Set<Project>();
-        //np. Set<Project>() jest metodą w DbContext, która zwraca DbSet<Project>. Ta metoda umożliwia dostęp do wszystkich obiektów Project przechowywanych w bazie danych i wykonywanie operacji na tabeli Projects
+        //np. Set<Project>() jest metodą w DbContext, która zwraca DbSet<Project>. Ta metoda umożliwia dostęp do wszystkich obiektów np. Project przechowywanych w bazie danych i wykonywanie operacji na tabeli np. Projects
 
         #region krótki opis metody OnConiguring
         //Metoda OnConfiguring w DbContext jest używana do konfigurowania opcji dla kontekstu bazy danych.Jest to miejsce, w którym można ustawić szczegóły połączenia z bazą danych, dostawcę bazy danych, 
